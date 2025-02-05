@@ -35,6 +35,7 @@
     width: 100vw;
     display: flex;
     align-items: center;
+    position: sticky;
   }
   .header-sm-container {
     display: none;

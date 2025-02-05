@@ -7,6 +7,7 @@ import Profile from '../Profile'
 import EmploymentType from '../EmploymentType'
 import SalaryRange from '../SalaryRange'
 import JobsItem from '../JobsItem'
+import JobLocation from '../JobLocation'
 import './index.css'
 
 const employmentTypesList = [
@@ -47,6 +48,14 @@ const salaryRangesList = [
   },
 ]
 
+const jobLocationsList = [
+  {location: 'Hyderabad', locationId: 'HYDERABAD'},
+  {location: 'Bangalore', locationId: 'BANGALORE'},
+  {location: 'Chennai', locationId: 'CHENNAI'},
+  {location: 'Delhi', locationId: 'DELHI'},
+  {location: 'Mumbai', locationId: 'MUMBAI'},
+]
+
 class Jobs extends Component {
   state = {
     profile: '',
@@ -55,6 +64,7 @@ class Jobs extends Component {
     jobsStatus: 'INITIAL',
     employmentType: [],
     minimumPackage: '',
+    jobLocation: [],
     userSearch: '',
   }
 
@@ -87,10 +97,13 @@ class Jobs extends Component {
   getJobsList = async () => {
     this.setState({jobsStatus: 'LOADING'})
     const jwtToken = Cookies.get('jwt_token')
-    const {employmentType, minimumPackage, userSearch} = this.state
+    const {employmentType, minimumPackage, userSearch, jobLocation} = this.state
     const typeOfEmployment =
       employmentType.length === 0 ? '' : employmentType.join(',')
-    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${typeOfEmployment}&minimum_package=${minimumPackage}&search=${userSearch}`
+    const locationOfJobs = jobLocation.length === 0 ? '' : jobLocation.join(',')
+    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${typeOfEmployment}&minimum_package=${minimumPackage}&search=${userSearch}&location=${encodeURIComponent(
+      locationOfJobs,
+    )}`
     const response = await fetch(apiUrl, {
       headers: {Authorization: `Bearer ${jwtToken}`},
     })
@@ -132,6 +145,16 @@ class Jobs extends Component {
   selectMinimumPackage = id =>
     this.setState({minimumPackage: id}, this.getJobsList)
 
+  selectJobLocation = id =>
+    this.setState(
+      prevState => ({
+        jobLocation: prevState.jobLocation.includes(id)
+          ? prevState.jobLocation.filter(location => location !== id)
+          : [...prevState.jobLocation, id],
+      }),
+      this.getJobsList,
+    )
+
   onChangeUserSearch = event => this.setState({userSearch: event.target.value})
 
   searchValue = () => this.getJobsList()
@@ -140,7 +163,7 @@ class Jobs extends Component {
 
   clearFilter = () =>
     this.setState(
-      {employmentType: [], minimumPackage: '', userSearch: ''},
+      {employmentType: [], minimumPackage: '', userSearch: '', jobLocation: []},
       this.getJobsList,
     )
 
@@ -153,9 +176,10 @@ class Jobs extends Component {
       employmentType,
       minimumPackage,
       userSearch,
+      jobLocation,
     } = this.state
 
-    console.log(employmentType.join(','))
+    console.log(jobLocation.join(','))
     return (
       <div className="job-bg-container">
         <Header />
@@ -195,6 +219,12 @@ class Jobs extends Component {
               salaryRangesList={salaryRangesList}
               selectMinimumPackage={this.selectMinimumPackage}
             />
+            <hr color="#6366f1" />
+            <JobLocation
+              jobLocation={jobLocation}
+              jobLocationsList={jobLocationsList}
+              selectJobLocation={this.selectJobLocation}
+            />
             <button
               type="button"
               className="clear-lg-button"
@@ -220,6 +250,7 @@ class Jobs extends Component {
                 className="search-lg-input"
               />
               <button
+                type="button"
                 data-testid="searchButton"
                 className="search-button"
                 onClick={this.searchValue}
