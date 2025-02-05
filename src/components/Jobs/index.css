@@ -8,27 +8,23 @@ body {
   height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: black;
   margin: 0px;
+  position: relative;
 }
 .job-right-section {
-  height: 0vh;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  width: 70vw;
-  overflow: auto;
+  width: 100vw;
 }
 .job-left-section {
-  height: 90vh;
-  width: 30vw;
+  width: 100vw;
   margin: 0px;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  position: sticky;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -146,5 +142,10 @@ hr {
   }
   .clear-sm-button {
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  .job-container {
+    overflow: auto;
   }
 }
