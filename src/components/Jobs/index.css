@@ -1,0 +1,143 @@
+body {
+  margin: 0px;
+}
+.job-bg-container {
+  height: 100vh;
+}
+.job-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  overflow: auto;
+  top: 0;
+  margin: 0px;
+}
+.job-right-section {
+  height: 0vh;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+.job-left-section {
+  margin: 0px;
+  margin-top: 50px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+hr {
+  width: 100%;
+}
+.search-sm-container {
+  background-color: transparent;
+  border: #64748b 1px solid;
+  height: 35px;
+  width: 95%;
+  display: flex;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.search-lg-container {
+  display: none;
+}
+.search-sm-input {
+  background-color: transparent;
+  height: 35px;
+  width: 92%;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: Roboto;
+}
+.search-sm-icon {
+  background-color: #2c364c;
+  height: 35px;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+}
+.search-button {
+  background-color: #2c364c;
+  border: none;
+  height: 35px;
+}
+
+.clear-sm-button {
+  background-color: #8b0000;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 25px 20px;
+  display: block;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.clear-lg-button {
+  display: none;
+}
+@media (min-width: 768px) {
+  .job-container {
+    flex-direction: row;
+    padding: 15px;
+  }
+  .job-left-section {
+    margin-left: 50px;
+    position: fixed;
+    top: 10;
+    left: 0;
+    overflow: hidden;
+    height: 100vh;
+  }
+  .job-right-section {
+    height: 85vh;
+    width: 75vw;
+    margin-left: 400px;
+    margin-top: 20px;
+  }
+  .search-lg-container {
+    background-color: transparent;
+    border: #64748b 1px solid;
+    height: 35px;
+    width: 400px;
+    display: flex;
+    margin-left: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .search-lg-input {
+    background-color: transparent;
+    height: 35px;
+    width: 375px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Roboto;
+  }
+  .search-lg-icon {
+    background-color: #2c364c;
+    height: 20px;
+    width: 25px;
+    cursor: pointer;
+  }
+  .search-sm-container {
+    display: none;
+  }
+  .clear-lg-button {
+    background-color: #ff0b37;
+    color: #fbbf24;
+    padding: 10px 15px;
+    margin: 15px 0px;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .clear-sm-button {
+    display: none;
+  }
+}

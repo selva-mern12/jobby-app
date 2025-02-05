@@ -1,0 +1,162 @@
+.jobs-items-container {
+  font-family: Roboto;
+  color: #ffffff;
+  background-color: #202020;
+  padding: 20px;
+  margin: 40px;
+  border-radius: 10px;
+  cursor: default;
+}
+.logo-header-contain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.company-logo {
+  height: 75px;
+  margin-right: 15px;
+}
+.company-heading {
+  font-size: 25px;
+  margin: 0px;
+}
+.company-rating {
+  font-size: 15px;
+  margin-top: 7px;
+}
+
+.company-job-deitails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+  font-size: 20px;
+}
+.company-location-employ {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.company-location {
+  margin-right: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  margin-left: 7px;
+}
+.description-visit-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.visit {
+  color: #4f46e5;
+}
+
+.visit:hover {
+  animation: changeColor 1s linear infinite;
+}
+
+@keyframes changeColor {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #ff0000;
+  }
+  100% {
+    color: #ffffff;
+  }
+}
+
+.skill-description-life-heading {
+  font-size: 25px;
+}
+.job-description {
+  font-size: 20px;
+}
+.skills-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: auto;
+  flex-wrap: wrap;
+}
+.skill {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 30px;
+}
+.skill-img {
+  height: 80px;
+  margin-right: 10px;
+}
+.skill-name {
+  font-size: 20px;
+}
+.life-at-company-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.life-at-company-paragraph {
+  font-size: 17px;
+}
+.life-at-company-img {
+  width: 40vw;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .jobs-items-container {
+    margin: 20px;
+  }
+  .company-logo {
+    height: 60px;
+    margin-right: 15px;
+  }
+  .company-heading {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .company-location {
+    font-size: 15px;
+    margin-right: 15px;
+  }
+  .skill-description-life-heading {
+    font-size: 20px;
+  }
+  .job-description {
+    font-size: 15px;
+  }
+  .skill {
+    margin: 15px;
+  }
+  .skill-img {
+    height: 50px;
+  }
+  .skill-name {
+    font-size: 15px;
+  }
+  .life-at-company-container {
+    flex-direction: column;
+  }
+  .life-at-company-paragraph {
+    font-size: 15px;
+  }
+  .life-at-company-img {
+    width: auto;
+  }
+}

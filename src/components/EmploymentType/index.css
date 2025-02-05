@@ -1,0 +1,41 @@
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+.employ-heading {
+  font-family: Roboto;
+  font-size: 25px;
+  color: #ffffff;
+}
+.employ-label {
+  font-family: Roboto;
+  font-size: 15px;
+  color: #ffffff;
+  margin-left: 10px;
+}
+.checkbox-container {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+input,
+label {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .employ-heading {
+    font-size: 18px;
+  }
+  .employ-label {
+    font-size: 13px;
+    align-self: center;
+  }
+  .checkbox {
+    height: 15px;
+    width: 15px;
+  }
+}

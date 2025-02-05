@@ -1,0 +1,32 @@
+.jobItemDetails-container {
+  height: 90vh;
+  overflow: auto;
+  background-color: #000000;
+}
+ul {
+  list-style-type: none;
+  margin: 0px;
+  box-sizing: border-box;
+  margin-left: 0px;
+  padding: 0px 20px;
+}
+.similar-jobs-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.similar {
+  font-size: 65px;
+  color: #ffffff;
+  font-family: Roboto;
+  margin-left: 35px;
+}
+@media (max-width: 768px) {
+  ul {
+    padding: 0px 10px;
+  }
+  .similar {
+    font-size: 30px;
+  }
+}
